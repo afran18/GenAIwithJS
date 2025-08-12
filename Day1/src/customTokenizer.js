@@ -12,25 +12,24 @@ export default class CustomTokenizer {
   }
 
   encode(text) {
-  const tokens = text.split(/(\s+|[,.!?])/); 
+    const tokens = text.split(/(\s+|[,.!?])/);
 
-  const tokenIds = tokens.map((token) => {
-    if (!this.tokenToId[token]) {
-      let newId;
-      do {
-        newId = this.generateRandomId();
-      } while (this.idToToken[newId]);
-      this.tokenToId[token] = newId;
-      this.idToToken[newId] = token;
-    }
-    return this.tokenToId[token];
-  });
+    const tokenIds = tokens.map((token) => {
+      if (!this.tokenToId[token]) {
+        let newId;
+        do {
+          newId = this.generateRandomId();
+        } while (this.idToToken[newId]);
+        this.tokenToId[token] = newId;
+        this.idToToken[newId] = token;
+      }
+      return this.tokenToId[token];
+    });
 
-  return tokenIds;
+    return tokenIds;
+  }
+
+  decode(tokenIds) {
+    return tokenIds.map((id) => this.idToToken[id] || "").join("");
+  }
 }
-
-decode(tokenIds) {
-  return tokenIds.map((id) => this.idToToken[id] || "").join("");
-}
-}
-

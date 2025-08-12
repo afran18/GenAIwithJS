@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import CustomTokenizer from "./customTokenizer.js"; 
+import "./App.css";
+import CustomTokenizer from "./customTokenizer.js";
 
 const tokenizer = new CustomTokenizer();
 
@@ -8,35 +9,39 @@ export default function App() {
   const [tokens, setTokens] = useState([]);
   const [decoded, setDecoded] = useState("");
 
-  const handleTokenize = () => {
+  const handleTokenize = (e) => {
+    e.preventDefault();
     const encoded = tokenizer.encode(input);
     setTokens(encoded);
     setDecoded(tokenizer.decode(encoded));
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div className="container">
       <h1>Custom Tokenizer Demo</h1>
 
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        rows={4}
-        cols={50}
-        placeholder="Type something here..."
-        style={{ display: "block", marginBottom: "10px", padding: "5px" }}
-      />
+      <form className="searchForm" onSubmit={handleTokenize}>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type something here..."
+        />
 
-      <button onClick={handleTokenize} style={{ padding: "5px 10px" }}>
-        Tokenize
-      </button>
+        <button type="submit">
+          Tokenize
+        </button>
+      </form>
 
-      <div style={{ marginTop: "20px" }}>
-        <h3>Tokens:</h3>
-        <pre>{JSON.stringify(tokens, null, 2)}</pre>
+      <div className="tokenDiv">
+        <div className="encodeDiv">
+          <h3>Tokens:</h3>
+          <pre>{JSON.stringify(tokens)}</pre>
+        </div>
 
-        <h3>Decoded Text:</h3>
-        <pre>{decoded}</pre>
+        <div className="decodeDiv">
+          <h3>Decoded Text:</h3>
+          <pre>{decoded}</pre>
+        </div>
       </div>
     </div>
   );

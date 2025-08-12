@@ -1,42 +1,72 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.container {
+  max-width: 800px;
+  width: 800px;
+  background-color: rgb(21, 21, 21);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: sans-serif;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.searchForm {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.searchForm input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #ccc;
+  color: #000;
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.searchForm button {
+  background-color: #008421;
+  height: 40px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0 15px;
+  flex-shrink: 0;
+  font-size: 16px;
 }
 
-.card {
-  padding: 2em;
+.tokenDiv {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.encodeDiv,
+.decodeDiv {
+  flex: 1;
+  width: 50%;
+}
+
+pre {
+  background-color: #323131;
+  border-radius: 10px;
+  padding: 10px;
+  white-space: pre-wrap;
+  max-height: 300px;
+  min-height: 20px;
+  overflow-y: auto;
+  word-break: break-all;
 }
