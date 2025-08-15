@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Hitesh", "img": "/assets/hitesh.png", "desc": "Tech educator & mentor" },
+  { "id": 2, "name": "Piyush", "img": "/assets/piyush.jpg", "desc": "Startup enthusiast" },
+  { "id": 3, "name": "Virat Kohli", "img": "/assets/virat.jpg", "desc": "Indian cricketer" },
+  { "id": 4, "name": "Shahrukh Khan", "img": "/assets/srk.jpg", "desc": "Bollywood actor" }
+]

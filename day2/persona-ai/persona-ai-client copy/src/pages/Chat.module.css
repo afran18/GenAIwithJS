@@ -1,0 +1,23 @@
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.mainArea {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.mainArea > :first-child {
+  flex: 0 0 250px;
+  border-right: 1px solid #ddd;
+}
+
+.mainArea > :last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
